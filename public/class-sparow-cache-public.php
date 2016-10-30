@@ -1,26 +1,26 @@
 <?php
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * @link       https://www.brechtryckaert.com
  * @since      1.0.0
  *
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/admin
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/public
  */
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/admin
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/public
  * @author     Brecht Ryckaert <brecht@mediagraaf.be>
  */
-class Spearow_Cache_Admin {
+class Sparow_Cache_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -44,7 +44,7 @@ class Spearow_Cache_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
+	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
@@ -55,7 +55,7 @@ class Spearow_Cache_Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
+	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -65,20 +65,20 @@ class Spearow_Cache_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Spearow_Cache_Loader as all of the hooks are defined
+		 * defined in Sparow_Cache_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Spearow_Cache_Loader will then create the relationship
+		 * The Sparow_Cache_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/spearow-cache-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/sparow-cache-public.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -88,15 +88,15 @@ class Spearow_Cache_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Spearow_Cache_Loader as all of the hooks are defined
+		 * defined in Sparow_Cache_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Spearow_Cache_Loader will then create the relationship
+		 * The Sparow_Cache_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/spearow-cache-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/sparow-cache-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

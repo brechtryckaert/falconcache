@@ -8,8 +8,8 @@
  * @link       https://www.brechtryckaert.com
  * @since      1.0.0
  *
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/public/partials
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/public/partials
  */
 ?>
 

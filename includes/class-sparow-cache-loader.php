@@ -6,8 +6,8 @@
  * @link       https://www.brechtryckaert.com
  * @since      1.0.0
  *
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/includes
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/includes
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/includes
  * @author     Brecht Ryckaert <brecht@mediagraaf.be>
  */
-class Spearow_Cache_Loader {
+class Sparow_Cache_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

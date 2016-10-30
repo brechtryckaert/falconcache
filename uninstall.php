@@ -22,7 +22,7 @@
  * @link       https://www.brechtryckaert.com
  * @since      1.0.0
  *
- * @package    Spearow_Cache
+ * @package    Sparow_Cache
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -9,8 +9,8 @@
  * @link       https://www.brechtryckaert.com
  * @since      1.0.0
  *
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/includes
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Spearow_Cache
- * @subpackage Spearow_Cache/includes
+ * @package    Sparow_Cache
+ * @subpackage Sparow_Cache/includes
  * @author     Brecht Ryckaert <brecht@mediagraaf.be>
  */
-class Spearow_Cache {
+class Sparow_Cache {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Spearow_Cache {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Spearow_Cache_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Sparow_Cache_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -68,7 +68,7 @@ class Spearow_Cache {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'spearow-cache';
+		$this->plugin_name = 'sparow-cache';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
@@ -83,10 +83,10 @@ class Spearow_Cache {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Spearow_Cache_Loader. Orchestrates the hooks of the plugin.
-	 * - Spearow_Cache_i18n. Defines internationalization functionality.
-	 * - Spearow_Cache_Admin. Defines all hooks for the admin area.
-	 * - Spearow_Cache_Public. Defines all hooks for the public side of the site.
+	 * - Sparow_Cache_Loader. Orchestrates the hooks of the plugin.
+	 * - Sparow_Cache_i18n. Defines internationalization functionality.
+	 * - Sparow_Cache_Admin. Defines all hooks for the admin area.
+	 * - Sparow_Cache_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -100,33 +100,33 @@ class Spearow_Cache {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-spearow-cache-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sparow-cache-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-spearow-cache-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-sparow-cache-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-spearow-cache-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-sparow-cache-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-spearow-cache-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-sparow-cache-public.php';
 
-		$this->loader = new Spearow_Cache_Loader();
+		$this->loader = new Sparow_Cache_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Spearow_Cache_i18n class in order to set the domain and to register the hook
+	 * Uses the Sparow_Cache_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -134,7 +134,7 @@ class Spearow_Cache {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Spearow_Cache_i18n();
+		$plugin_i18n = new Sparow_Cache_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -149,7 +149,7 @@ class Spearow_Cache {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Spearow_Cache_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Sparow_Cache_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -165,7 +165,7 @@ class Spearow_Cache {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Spearow_Cache_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Sparow_Cache_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -196,7 +196,7 @@ class Spearow_Cache {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Spearow_Cache_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Sparow_Cache_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
